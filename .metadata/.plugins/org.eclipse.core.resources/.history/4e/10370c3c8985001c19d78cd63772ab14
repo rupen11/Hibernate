@@ -1,0 +1,16 @@
+package com.tut;
+
+public class Address {
+
+	public static void main(String[] args) {
+		private int addressId;
+		private String street;
+		private String city;
+		priavte boolean isOpen;
+		private double x;
+		priavte Date addedDate;
+		private byte[] image;
+
+	}
+
+}

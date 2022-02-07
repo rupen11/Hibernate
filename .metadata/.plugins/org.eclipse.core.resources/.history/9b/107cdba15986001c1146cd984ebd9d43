@@ -1,0 +1,10 @@
+package com.map1;
+
+import java.util.List;
+
+public class Employee {
+	private int eid;
+	private String name;
+	
+	private List<Project> project_;
+}

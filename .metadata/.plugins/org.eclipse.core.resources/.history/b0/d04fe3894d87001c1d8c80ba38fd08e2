@@ -1,0 +1,46 @@
+package com.hql;
+
+import java.util.List;
+
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+import com.tut.Student;
+
+public class HQLExample {
+	public static void main(String[] args) {
+		Configuration cfg = new Configuration();
+		cfg.configure("hibernate.cfg.xml");
+		SessionFactory factory = cfg.buildSessionFactory();
+
+		Session s = factory.openSession();
+//		HQL
+		
+//----------------------------------Get Student-------------------------------------		
+		
+//		String query = "from Student";
+//		String query = "from Student where city='Ahmedabad'";
+//		String query = "from Student where city=:cityname";
+		String query = "from Student where city=:cityname and name=:name";
+		
+		Query q = s.createQuery(query);
+		q.setParameter("cityname", "Himmatnagar");
+		q.setParameter("name", "Kinal");
+		
+		List<Student> list = q.list();
+		
+		for(Student stu: list) {
+			System.out.println(stu.getName() + ":" + stu.getCity() + ":" + stu.getCerti());
+		}
+
+//----------------------------------Delete Student-------------------------------------
+		Query q2 = s.createQuery("delete from Student s where s.city=:cityname");
+		q.setParameter("cityname", "Himmatnagar");
+		q2.executeUpdate();
+		
+		s.close();
+		factory.close();
+	}
+}

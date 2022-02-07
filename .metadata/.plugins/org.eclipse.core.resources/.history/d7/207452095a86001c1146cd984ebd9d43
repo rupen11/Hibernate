@@ -1,0 +1,11 @@
+package com.map1;
+
+import org.hibernate.cfg.Configuration;
+
+public class MappingMTM {
+	public static void main(String[] args) {
+		
+		Configuration cfg = new Configuration();
+		
+	}
+}

@@ -1,0 +1,8 @@
+package com.map1;
+
+public class Project {
+	private int pid;
+	private String projectName;
+	
+	private List<Employee> employee_;
+}

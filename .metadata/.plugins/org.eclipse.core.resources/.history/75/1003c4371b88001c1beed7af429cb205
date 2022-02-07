@@ -1,0 +1,40 @@
+package com.secondcache;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+import com.tut.Student;
+
+//Not nessasary- Just for hibernate.cfg.xml->import net.sf.ehcache.hibernate.EhCacheRegionFactory;
+
+public class secondcache {
+	public static void main(String[] args) {
+		Configuration cfg = new Configuration();
+		cfg.configure("hibernate.cfg.xml");
+		SessionFactory factory = cfg.buildSessionFactory();
+		Session session1 = factory.openSession();
+
+		
+		
+		
+		
+		
+		
+		
+		
+		session1.close();
+Session session2 = factory.openSession();
+
+		
+		
+		
+		
+		
+		
+		
+		
+		session2.close();
+		factory.close();
+	}
+}

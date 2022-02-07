@@ -1,0 +1,6 @@
+package com.map;
+
+public class Quetion {
+	private int questionId;
+	private String question
+}

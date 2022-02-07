@@ -1,0 +1,59 @@
+package com.map1;
+
+import java.util.List;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+
+@Entity
+public class Employee {
+	@Id
+	private int eid;
+	private String name;
+	
+	@ManyToMany(mappedBy = "employee_")
+	private List<Project> project_;
+	
+
+	public Employee(int eid, String name, List<Project> project_) {
+		super();
+		this.eid = eid;
+		this.name = name;
+		this.project_ = project_;
+	}
+	
+
+	public Employee() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
+
+	public int getEid() {
+		return eid;
+	}
+
+	public void setEid(int eid) {
+		this.eid = eid;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public List<Project> getProject_() {
+		return project_;
+	}
+
+	public void setProject_(List<Project> project_) {
+		this.project_ = project_;
+	}
+	
+	
+	
+}

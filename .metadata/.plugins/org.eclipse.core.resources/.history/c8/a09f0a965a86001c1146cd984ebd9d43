@@ -1,0 +1,38 @@
+package com.map1;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+public class MappingMTM {
+	public static void main(String[] args) {
+		
+		Configuration cfg = new Configuration();
+		cfg.configure("hibernate.cfg.xml");
+		SessionFactory factory = cfg.buildSessionFactory();
+		
+//		Create Employee1
+		Employee emp = new Employee();
+		emp.setEid(1);
+		emp.setName("Rupen");
+		
+//		Create Employee2
+		Employee emp1 = new Employee();
+		emp1.setEid(2);
+		emp1.setName("Pratham");
+		
+//		Create Project1
+		Project pro = new Project();
+		pro.setPid(101);
+		pro.setProjectName("Java aaplication");
+		
+		
+		Session session = factory.openSession();
+		Transaction t = session.beginTransaction();
+		
+		t.commit();
+		session.close();
+		
+	}
+}

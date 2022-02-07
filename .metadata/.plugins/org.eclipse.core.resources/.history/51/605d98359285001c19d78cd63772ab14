@@ -1,0 +1,9 @@
+package com.tut;
+
+public class FecthDemo {
+
+	public static void main(String[] args) {
+		// Get & Load
+	}
+
+}

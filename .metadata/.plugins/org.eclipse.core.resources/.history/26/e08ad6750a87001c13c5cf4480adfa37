@@ -1,0 +1,121 @@
+package com.map;
+
+import java.util.List;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+
+//One to One:- Only one column attach, which have @Id annotation in Answer table
+//One to Many:- One Quetion has Many answers
+
+@Entity
+public class Question {
+	
+//	=======================================One to one========================================
+	@Id
+	@Column(name="question_id")
+	private int questionId;
+	private String question;
+	
+	@OneToOne 
+	@JoinColumn(name="a_id")
+	private Answer answer_;
+	
+	
+	public Question(int questionId, String question) {
+		super();
+		this.questionId = questionId;
+		this.question = question;
+	}
+	
+	
+	public Question() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
+	
+	public int getQuestionId() {
+		return questionId;
+	}
+	
+	public void setQuestionId(int questionId) {
+		this.questionId = questionId;
+	}
+	
+	public String getQuestion() {
+		return question;
+	}
+	
+	public void setQuestion(String question) {
+		this.question = question;
+	}
+
+	public Answer getAnswer() {
+		return answer_;
+	}
+
+	public void setAnswer(Answer answer_) {
+		this.answer_ = answer_;
+	}
+
+//	=======================================END One to one========================================
+	
+	
+	
+	
+
+//	=======================================One to many========================================
+//	@Id
+//	@Column(name="question_id")
+//	private int questionId;
+//	private String question;
+//	
+//	@OneToMany(mappedBy = "question_")
+//	private List<Answer> answer_;
+//	
+//	
+//	public Question(int questionId, String question) {
+//		super();
+//		this.questionId = questionId;
+//		this.question = question;
+//	}
+//	
+//	
+//	public Question() {
+//		super();
+//		// TODO Auto-generated constructor stub
+//	}
+//	
+//	
+//	public int getQuestionId() {
+//		return questionId;
+//	}
+//	
+//	public void setQuestionId(int questionId) {
+//		this.questionId = questionId;
+//	}
+//	
+//	public String getQuestion() {
+//		return question;
+//	}
+//	
+//	public void setQuestion(String question) {
+//		this.question = question;
+//	}
+//
+//	public List<Answer> getAnswer_() {
+//		return answer_;
+//	}
+//
+//	public void setAnswer_(List<Answer> answer_) {
+//		this.answer_ = answer_;
+//	}
+
+//	=======================================END One to many========================================
+
+}
